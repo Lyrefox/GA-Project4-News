@@ -1,9 +1,16 @@
 img {
-    width: 40%;
-    height: 40%;
+    width: 80%;
+    height: 80%;
 }
 
-mainContent {
+#mainContent {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* outline: solid black 2px; */
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 40%;
+
 }
