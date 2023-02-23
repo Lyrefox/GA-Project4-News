@@ -1,6 +1,4 @@
-import "./TopArticles.css"
-
-export default function TopArticles(props) {
+export default function ArticleSearchResults(props) {
     // console.log(props)
     return (
         <div id="mainContent">
