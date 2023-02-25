@@ -62,15 +62,16 @@ export default function News() {
           </FormControl>
         </Box>
       </div>
-
-      {topArticles.map((article, index) => (
-        <TopArticles
-          key={index}
-          title={article.title}
-          img={article.urlToImage}
-          url={article.url}
-        />
-      ))}
+      <div id="articles">
+        {topArticles.map((article, index) => (
+          <TopArticles
+            key={index}
+            title={article.title}
+            img={article.urlToImage}
+            url={article.url}
+          />
+        ))}
+      </div>
     </div>
   );
 }

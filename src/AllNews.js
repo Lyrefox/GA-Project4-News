@@ -1,41 +1,68 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
 import "./AllNews.css";
-import ArticleSearchResults from "./ArticleSearchResults.js";
+import TopArticles from "./TopArticles";
 import { NEWS_API_KEY } from "./HomeNews";
 
-export default function AllNews() {
-  const [search, setSearch] = useState("");
-  const [searchAxios, setSearchAxios] = useState("Google");
-  const [searchResults, setSearchResults] = useState([]);
 
+
+
+export default function AllNews() {
+//   const [search, setSearch] = useState(""); // holds current text typed into search bar
+  const [searchAxios, setSearchAxios] = useState("Google"); // after button click searchAxios is set to value of search which runs axios call.
+  const [searchResults, setSearchResults] = useState([]);
+  const [pageNumber, setPageNumber] = useState(1);
+  const count = useRef(1);
+  // console.log(count)
   const textChange = (event) => {
-    setSearch(event.target.value);
+    setSearchAxios(event.target.value)
   };
 
   const enterKeyPress = (event) => {
     if (event.key === "Enter") {
-      changeState();
+      search();
     }
   };
 
-  const changeState = () => {
-    setSearchAxios(search);
+  const search = () => {
+    // setSearchAxios(search);
+    loadNews(1).then((response) => {
+        setSearchResults(response.data.articles)
+        setPageNumber(1)
+    }
+        );
+  };
+
+  const nextPage = () => {
+    count.current += 1;
+    setPageNumber(count.current);
   };
 
   useEffect(() => {
-    console.log(searchAxios);
-    axios
+    // count.current = count.current + 1
+    // setPageNumber(count)
+
+    // console.log(count);
+    // console.log(pageNumber)
+    loadNews(pageNumber).then((response) => setSearchResults([...searchResults, ...response.data.articles]));
+  }, [pageNumber]);
+  //   console.log(searchResults);
+  const loadNews = (page) => {
+    return axios
       .get(
-        `https://newsapi.org/v2/everything?q=${searchAxios}&apiKey=${NEWS_API_KEY}`
+        `https://newsapi.org/v2/everything?q=${searchAxios}&sortby=popularity&page=${page}&apiKey=${NEWS_API_KEY}`
       )
-      .then((response) => setSearchResults(response.data.articles));
-  }, [searchAxios]);
-  console.log(searchResults);
+    //   .then((response) => setSearchResults([...searchResults, ...response.data.articles]));
+
+  }
+
+
+
+
   return (
     <div>
       <Stack spacing={2} direction="row">
@@ -50,22 +77,40 @@ export default function AllNews() {
           variant="outlined"
           onKeyDown={enterKeyPress}
           onChange={textChange}
+          value={""}
         />
         <div id="search-button">
-          <Button onClick={changeState} variant="outlined">
+          <Button onClick={search} variant="outlined">
             Submit
           </Button>
         </div>
       </div>
+        <div>
 
-        {searchResults.map((article, index) => (
+        </div>
+      {/* {searchResults.map((article, index) => (
           <ArticleSearchResults
           key={index}
           title={article.title}
           img={article.urlToImage}
           url={article.url}
         />
-        ))}
+        ))} */}
+      <div id="articles">
+        {searchResults.map((article, index) => (
+          <TopArticles
+            key={index}
+            title={article.title}
+            img={article.urlToImage}
+            url={article.url}
+          />
+          ))}
+      </div>
+      <div id="next-page-button">
+        <Button onClick={nextPage} variant="outlined">
+          Next Page
+        </Button>
+      </div>
     </div>
   );
 }
