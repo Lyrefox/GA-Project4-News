@@ -20,7 +20,7 @@ export const NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 export default function News() {
   const [topArticles, setTopArticles] = useState([]);
   const [region, setRegion] = useState(["au"]);
-  const [favourite, setFavourite] = useState([])
+//   const [favourite, setFavourite] = useState([])
 
 //   const count = useSelector((state) => state.counter.value)
   const dispatch = useDispatch()
@@ -81,14 +81,11 @@ export default function News() {
         <Button onClick={() => dispatch(decrement())}>
             Decrement
         </Button> */}
-      <h1 id="main-title">World Wide News App</h1>
+
       <div id="all-news-button">
         <Stack spacing={2} direction="row">
           <Button id="all-news-button" variant="outlined" href="/allnews">
             Search News
-          </Button>
-          <Button id="favourites-button" variant="outlined" href="/favourites">
-            Favourites
           </Button>
         </Stack>
       </div>

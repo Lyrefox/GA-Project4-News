@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 
 import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
+// import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
-import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
+// import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 
 import axios from "axios";
 import "./AllNews.css";
@@ -18,6 +18,7 @@ export default function AllNews() {
   const [favourites, setFavourites] = useState([]);
   const count = useRef(1);
   // console.log(count)
+//   console.log(searchAxios)
   const textChange = (event) => {
     setSearchAxios(event.target.value);
   };
@@ -70,11 +71,6 @@ export default function AllNews() {
   return (
     <div>
       <div id="content">
-        <Stack spacing={2} direction="row">
-          <Button id="all-news-button" variant="outlined" href="/">
-            Home
-          </Button>
-        </Stack>
         <div>
           <TextField
             label="Search Field"
@@ -82,7 +78,7 @@ export default function AllNews() {
             variant="outlined"
             onKeyDown={enterKeyPress}
             onChange={textChange}
-            value={""}
+            value={searchAxios}
           />
         </div>
         <div id="search-button">

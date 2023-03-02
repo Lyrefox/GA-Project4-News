@@ -10,9 +10,6 @@ export default function Favourites() {
         console.log("Items Null")
         return (
             <div>
-                <Button id="home-button" variant="outlined" href="/">
-                    Home
-                </Button>
                 <h1>You have not favourited anything yet! Go favourite some articles and come back.</h1>
             </div>
         )
@@ -30,9 +27,6 @@ export default function Favourites() {
         }
         return (
             <div>
-                <Button id="home-button" variant="outlined" href="/">
-                    Home
-                </Button>
                 {fav.map((item, index) => (
                     <TopArticles
                     key={index}

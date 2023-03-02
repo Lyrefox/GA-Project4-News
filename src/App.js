@@ -1,18 +1,32 @@
-
-import './App.css';
-import HomeNews from "./HomeNews.js"
-import AllNews from "./AllNews.js"
+import "./App.css";
+import HomeNews from "./HomeNews.js";
+import AllNews from "./AllNews.js";
 import Favourites from "./Favourites.js";
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Button from "@mui/material/Button";
 
 function App() {
+  console.log(window.location.pathname);
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<HomeNews />} />
-      <Route path="/allnews" element={<AllNews />} />
-      <Route path="/favourites" element={<Favourites />} />
-    </Routes>
+      <div id="global-content">
+        <h1 id="main-title">World Wide News App</h1>
+        {window.location.pathname === "/" ? null : (
+          <Button id="home-button" variant="outlined" href="/">
+            Home
+          </Button>
+        )}
+        {window.location.pathname === "/favourites" ? null : (
+          <Button id="favourites-button" variant="outlined" href="/favourites">
+            Favourites
+          </Button>
+        )}
+      </div>
+      <Routes>
+        <Route path="/" element={<HomeNews />} />
+        <Route path="/allnews" element={<AllNews />} />
+        <Route path="/favourites" element={<Favourites />} />
+      </Routes>
     </BrowserRouter>
     // <div className="App">
     //   <HomeNews />
