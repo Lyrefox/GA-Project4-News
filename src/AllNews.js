@@ -3,23 +3,23 @@ import { useState, useEffect, useRef } from "react";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
+import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
+
 import axios from "axios";
 import "./AllNews.css";
 import TopArticles from "./TopArticles";
 import { NEWS_API_KEY } from "./HomeNews";
 
-
-
-
 export default function AllNews() {
-//   const [search, setSearch] = useState(""); // holds current text typed into search bar
+  //   const [search, setSearch] = useState(""); // holds current text typed into search bar
   const [searchAxios, setSearchAxios] = useState("Google"); // after button click searchAxios is set to value of search which runs axios call.
   const [searchResults, setSearchResults] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
+  const [favourites, setFavourites] = useState([]);
   const count = useRef(1);
   // console.log(count)
   const textChange = (event) => {
-    setSearchAxios(event.target.value)
+    setSearchAxios(event.target.value);
   };
 
   const enterKeyPress = (event) => {
@@ -31,10 +31,9 @@ export default function AllNews() {
   const search = () => {
     // setSearchAxios(search);
     loadNews(1).then((response) => {
-        setSearchResults(response.data.articles)
-        setPageNumber(1)
-    }
-        );
+      setSearchResults(response.data.articles);
+      setPageNumber(1);
+    });
   };
 
   const nextPage = () => {
@@ -43,72 +42,79 @@ export default function AllNews() {
   };
 
   useEffect(() => {
-    // count.current = count.current + 1
-    // setPageNumber(count)
+    console.log(favourites);
 
-    // console.log(count);
-    // console.log(pageNumber)
-    loadNews(pageNumber).then((response) => setSearchResults([...searchResults, ...response.data.articles]));
+    loadNews(pageNumber).then((response) =>
+      setSearchResults([...searchResults, ...response.data.articles])
+    );
   }, [pageNumber]);
   //   console.log(searchResults);
   const loadNews = (page) => {
-    return axios
-      .get(
-        `https://newsapi.org/v2/everything?q=${searchAxios}&sortby=popularity&page=${page}&apiKey=${NEWS_API_KEY}`
-      )
+    return axios.get(
+      `https://newsapi.org/v2/everything?q=${searchAxios}&sortby=popularity&page=${page}&apiKey=${NEWS_API_KEY}`
+    );
     //   .then((response) => setSearchResults([...searchResults, ...response.data.articles]));
+  };
 
-  }
+  const favouriteArticle = (e) => {
+    console.log("This is a test click from prop button");
+    console.log(e.target.id);
+    setFavourites(searchResults[e.target.id]);
+    console.log(favourites);
+  };
 
-
-
+  const scrollTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   return (
     <div>
-      <Stack spacing={2} direction="row">
-        <Button id="all-news-button" variant="outlined" href="/">
-          Home
-        </Button>
-      </Stack>
       <div id="content">
-        <TextField
-          label="Search Field"
-          type="search"
-          variant="outlined"
-          onKeyDown={enterKeyPress}
-          onChange={textChange}
-          value={""}
-        />
+        <Stack spacing={2} direction="row">
+          <Button id="all-news-button" variant="outlined" href="/">
+            Home
+          </Button>
+        </Stack>
+        <div>
+          <TextField
+            label="Search Field"
+            type="search"
+            variant="outlined"
+            onKeyDown={enterKeyPress}
+            onChange={textChange}
+            value={""}
+          />
+        </div>
         <div id="search-button">
           <Button onClick={search} variant="outlined">
             Submit
           </Button>
         </div>
       </div>
-        <div>
+      <div id="search-results-headline">
+        <h1>Search Results</h1>
+      </div>
 
-        </div>
-      {/* {searchResults.map((article, index) => (
-          <ArticleSearchResults
-          key={index}
-          title={article.title}
-          img={article.urlToImage}
-          url={article.url}
-        />
-        ))} */}
       <div id="articles">
         {searchResults.map((article, index) => (
           <TopArticles
             key={index}
+            index={index}
             title={article.title}
             img={article.urlToImage}
             url={article.url}
+            onClick={favouriteArticle}
           />
-          ))}
+        ))}
       </div>
-      <div id="next-page-button">
+      <div id="load-more-button">
         <Button onClick={nextPage} variant="outlined">
-          Next Page
+          Load More
+        </Button>
+      </div>
+      <div id="top-of-page">
+        <Button onClick={scrollTop} variant="">
+          ^
         </Button>
       </div>
     </div>
