@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@1,600&display=swap');
+
 #search-button {
     padding: 5px;
 }
@@ -26,7 +28,7 @@
 
 #search-results-headline {
     display: flex;
-justify-content: center;
+    justify-content: center;
 }
 
 #load-more-button {
@@ -35,6 +37,16 @@ justify-content: center;
     padding: 10px;
 }
 #top-of-page {
-    display: flex;
-    justify-content: right;
+    padding-left: 5px;
+}
+
+#text-field {
+    background-color: white;
+    /* background: url(https://www.myfreetextures.com/wp-content/uploads/2011/06/grungy-rough-old-worn-paper.jpg); */
+    color: black;
+}
+
+#headline-header {
+    font-family: Shantell sans;
+    font-size: 46px;
 }

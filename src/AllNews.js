@@ -18,7 +18,7 @@ export default function AllNews() {
   const [favourites, setFavourites] = useState([]);
   const count = useRef(1);
   // console.log(count)
-//   console.log(searchAxios)
+  //   console.log(searchAxios)
   const textChange = (event) => {
     setSearchAxios(event.target.value);
   };
@@ -73,6 +73,7 @@ export default function AllNews() {
       <div id="content">
         <div>
           <TextField
+            id="text-field"
             label="Search Field"
             type="search"
             variant="outlined"
@@ -82,7 +83,7 @@ export default function AllNews() {
           />
         </div>
         <div id="search-button">
-          <Button onClick={search} variant="outlined">
+          <Button onClick={search} variant="contained">
             Submit
           </Button>
         </div>
@@ -104,14 +105,14 @@ export default function AllNews() {
         ))}
       </div>
       <div id="load-more-button">
-        <Button onClick={nextPage} variant="outlined">
+        <Button onClick={nextPage} variant="contained">
           Load More
         </Button>
-      </div>
-      <div id="top-of-page">
-        <Button onClick={scrollTop} variant="">
-          ^
-        </Button>
+        <div id="top-of-page">
+          <Button onClick={scrollTop} variant="contained">
+            ⬆
+          </Button>
+        </div>
       </div>
     </div>
   );

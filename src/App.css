@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Gajraj+One&display=swap');
+
+
 .App {
   text-align: center;
 }
@@ -47,4 +50,17 @@
 
 #home-button {
   margin-bottom: 5px;
+}
+
+body {
+  background-color: #ffffff;
+  opacity: 1;
+  background-size: 20px 20px;
+  background-image:  repeating-linear-gradient(0deg, #010103, #010103 1px, #ffffff 1px, #ffffff);
+
+}
+#main-title {
+  font-family: Gajraj One;
+  font-size: 56px;
+  color: darkslategrey;
 }

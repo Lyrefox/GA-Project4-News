@@ -84,7 +84,7 @@ export default function News() {
 
       <div id="all-news-button">
         <Stack spacing={2} direction="row">
-          <Button id="all-news-button" variant="outlined" href="/allnews">
+          <Button id="all-news-button" variant="contained" href="/allnews">
             Search News
           </Button>
         </Stack>
@@ -108,7 +108,7 @@ export default function News() {
           </FormControl>
       </div>
       <div>
-        <h2>Top Headlines</h2>
+        <h1 id="headline-header">Top Headlines</h1>
       </div>
       <div id="articles">
         {topArticles.map((article, index) => (

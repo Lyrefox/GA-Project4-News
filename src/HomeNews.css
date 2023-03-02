@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@1,600&display=swap');
+
 
 #dropdown-menu {
     display: flex;
@@ -25,4 +27,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#region-selection {
+    background-color: white;
+}
+
+#headline-header {
+    font-family: Shantell sans;
+    font-size: 46px;
 }

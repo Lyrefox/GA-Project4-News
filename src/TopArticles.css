@@ -16,3 +16,10 @@ img {
 
 }
 
+#mainContent > .fav-button {
+    color: black;
+    margin-top: 10px;
+    outline: solid black;
+    /* background-color: black; */
+}
+

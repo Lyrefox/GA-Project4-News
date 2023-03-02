@@ -5,7 +5,7 @@ const listReducer = (state = [], action) => {
   // Clone state object
   const newState = Object.assign({}, state);
 //   const newState = state
-  console.log(action)
+  // console.log(action)
 //   let i = 0
 // const newState = [...state, action.payload]
   // Look for type set in the actions file

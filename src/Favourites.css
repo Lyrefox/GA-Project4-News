@@ -1,0 +1,12 @@
+#articles {
+    margin: 0 auto;
+
+    display: flex;
+    flex-flow: row wrap;
+
+    width: 90%;
+    outline: solid black 2px;
+    background: url(https://www.myfreetextures.com/wp-content/uploads/2011/06/grungy-rough-old-worn-paper.jpg);
+    /* background-size: contain; */
+
+}

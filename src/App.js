@@ -6,18 +6,18 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Button from "@mui/material/Button";
 
 function App() {
-  console.log(window.location.pathname);
+  // console.log(window.location.pathname);
   return (
     <BrowserRouter>
       <div id="global-content">
         <h1 id="main-title">World Wide News App</h1>
         {window.location.pathname === "/" ? null : (
-          <Button id="home-button" variant="outlined" href="/">
+          <Button id="home-button" variant="contained" href="/">
             Home
           </Button>
         )}
         {window.location.pathname === "/favourites" ? null : (
-          <Button id="favourites-button" variant="outlined" href="/favourites">
+          <Button id="favourites-button" variant="contained" href="/favourites">
             Favourites
           </Button>
         )}

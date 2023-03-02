@@ -1,13 +1,13 @@
 import TopArticles from "./TopArticles"
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 
 export default function Favourites() {
     // console.log("Test")
     let items = JSON.parse(localStorage.getItem("persistantState"))
     // console.log(items)
-    console.log(items)
+    // console.log(items)
     if (items === null) {
-        console.log("Items Null")
+        // console.log("Items Null")
         return (
             <div>
                 <h1>You have not favourited anything yet! Go favourite some articles and come back.</h1>
@@ -17,7 +17,7 @@ export default function Favourites() {
     }else {
         const fav = []
         for (let item in items.List) {
-            console.log("for loop")
+            // console.log("for loop")
             // console.log(items.List[item][0])
             items.List[item].map((test) => fav.push(test))
             // console.log(item)
@@ -26,7 +26,7 @@ export default function Favourites() {
 
         }
         return (
-            <div>
+            <div id="articles">
                 {fav.map((item, index) => (
                     <TopArticles
                     key={index}
