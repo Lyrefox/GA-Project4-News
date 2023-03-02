@@ -10,7 +10,7 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 
 import { useSelector, useDispatch } from "react-redux"
-import { decrement, increment, incrementByAmount, setStateValue } from './features/counter/counterSlice'
+// import { decrement, increment, incrementByAmount, setStateValue } from './features/counter/counterSlice'
 import { addItem } from "./actions"
 
 import "./HomeNews.css";
