@@ -37,7 +37,7 @@
 <h3 align="center">World Wide News</h3>
 
   <p align="center">
-    project_description
+    This is an app that allows users to view news articles from multiple sources from across the word!
     <br />
     <a href="https://github.com/Lyrefox/ga-project4-news"><strong>Explore the docs »</strong></a>
     <br />
@@ -105,12 +105,11 @@ Using this site you can filter news articles based on country or search for news
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Follow these steps to get a local copy of the site up and running in no time.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+Below are the pre-requisates and how to install them.
 * npm
   ```sh
   npm install npm@latest -g
@@ -136,7 +135,7 @@ This is an example of how to list things you need to use the software and how to
 
 
 
-<!-- USAGE EXAMPLES -->
+<!-- USAGE EXAMPLES
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
@@ -145,7 +144,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+ -->
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -159,6 +158,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [✔️] use redux with local storage to save favourite articles
     - [✔️] render favourite articles on new favourites page
     - [] add ability to unfavourite articles
+- [] get tests running smoothly
 
 See the [open issues](https://github.com/Lyrefox/ga-project4-news/issues) for a full list of proposed features (and known issues).
 
@@ -183,7 +183,7 @@ See the [open issues](https://github.com/Lyrefox/ga-project4-news/issues) for a 
 [license-url]: https://github.com/Lyrefox/ga-project4-news/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/matthewlea175/
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: public/site-image.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB

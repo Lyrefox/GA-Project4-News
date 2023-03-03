@@ -43,7 +43,7 @@ export default function AllNews() {
   };
 
   useEffect(() => {
-    console.log(searchResults);
+    // console.log(searchResults);
 
     loadNews(pageNumber).then((response) =>
       setSearchResults([...searchResults, ...response.data.articles])
@@ -59,8 +59,8 @@ export default function AllNews() {
 
   const favouriteArticle = (e) => {
     console.log("This is a test click from prop button");
-    console.log(e.target.id);
-    setFavourites(searchResults[e.target.id]);
+    // console.log(e.target.id);
+    // setFavourites(searchResults[e.target.id]);
 
   };
 

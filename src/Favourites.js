@@ -15,7 +15,7 @@ export default function Favourites() {
         <div id="fav-title">
           <h2 data-testid="fav-title-test">Favourites</h2>
         </div>
-        <h1>
+        <h1 data-testid="no-fav-test-id" id="fav-something">
           You have not favourited anything yet! Go favourite some articles and
           come back.
         </h1>
