@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@1,600&display=swap');
+
+
 #articles {
     margin: 0 auto;
 
@@ -9,4 +12,13 @@
     background: url(https://www.myfreetextures.com/wp-content/uploads/2011/06/grungy-rough-old-worn-paper.jpg);
     /* background-size: contain; */
 
+}
+
+#fav-title {
+    display: flex;
+    justify-content: center;
+    font-size: 34px;
+    font-family: Shantell Sans;
+    color: blue;
+    text-shadow: 0.3em 0.3em 1em;
 }

@@ -28,7 +28,7 @@ export default function News() {
 
   useEffect(() => {
     //   dispatch(setStateValue(localStorage.getItem("favourites")))
-    //   console.log(count)
+      console.log(topArticles)
 
     // console.log(Object.keys(items.List)[0])
 

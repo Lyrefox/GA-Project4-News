@@ -43,7 +43,7 @@ export default function AllNews() {
   };
 
   useEffect(() => {
-    console.log(favourites);
+    console.log(searchResults);
 
     loadNews(pageNumber).then((response) =>
       setSearchResults([...searchResults, ...response.data.articles])
@@ -61,7 +61,7 @@ export default function AllNews() {
     console.log("This is a test click from prop button");
     console.log(e.target.id);
     setFavourites(searchResults[e.target.id]);
-    console.log(favourites);
+
   };
 
   const scrollTop = () => {
@@ -101,6 +101,7 @@ export default function AllNews() {
             img={article.urlToImage}
             url={article.url}
             onClick={favouriteArticle}
+            description={article.description}
           />
         ))}
       </div>

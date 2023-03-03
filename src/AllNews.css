@@ -29,6 +29,8 @@
 #search-results-headline {
     display: flex;
     justify-content: center;
+    font-family: Shantell Sans;
+    font-size: 24px;
 }
 
 #load-more-button {
@@ -46,7 +48,7 @@
     color: black;
 }
 
-#headline-header {
-    font-family: Shantell sans;
+/* #headline-header {
+    font-family: Shantell Sans;
     font-size: 46px;
-}
+} */

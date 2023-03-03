@@ -7,9 +7,11 @@ export default function TopArticles(props) {
         <div id="mainContent">
             <h2 data-testid="title-test">{props.title}</h2>
             <img data-testid="img-test" id="img" src={props.img} alt={props.title}></img><br></br>
-            <p>{props.description}</p>
+            <p id="description">{props.description}</p>
             <a data-testid="link-test" href={props.url}>Link to Article</a>
-            <Button className="fav-button" id={props.index} onClick={props.onClick}>Favourite</Button>
+            {window.location.pathname === "/favourites" ? null : (
+                <Button className="fav-button" id={props.index} onClick={props.onClick}>Favourite</Button>
+            )}
         </div>
     )
 }
