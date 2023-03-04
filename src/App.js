@@ -2,7 +2,7 @@ import "./App.css";
 import HomeNews from "./HomeNews.js";
 import AllNews from "./AllNews.js";
 import Favourites from "./Favourites.js";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
           </Button>
         )}
         {window.location.pathname.includes("/favourites") ? null : (
-          <Button id="favourites-button" variant="contained" href="./favourites">
+          <Button component={Link} id="favourites-button" variant="contained" href="./favourites" to="./favourites">
             Favourites
           </Button>
         )}
