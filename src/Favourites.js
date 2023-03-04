@@ -7,7 +7,7 @@ export default function Favourites() {
   // console.log("Test")
 //   console.log(localStrg)
   const localStrg = localStorage.getItem("persistantState")
-  let items = JSON.parse(localStrg ?? {});
+  let items = JSON.parse(localStrg);
   // console.log(items)
   // console.log(items)
   if (items === null) {

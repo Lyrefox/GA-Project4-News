@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 function App() {
   console.log(window.location.pathname);
   return (
-    <BrowserRouter basename="ga-project4-news">
+    <MemoryRouter>
       <div id="global-content">
         <h1 id="main-title">World Wide News App</h1>
         {window.location.pathname === "/" ? null : (
@@ -28,7 +28,7 @@ function App() {
         <Route path="/allnews" element={<AllNews />} />
         <Route path="/favourites" element={<Favourites />} />
       </Routes>
-    </BrowserRouter>
+    </MemoryRouter>
     // <div className="App">
     //   <HomeNews />
     // </div>
