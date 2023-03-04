@@ -2,13 +2,13 @@ import "./App.css";
 import HomeNews from "./HomeNews.js";
 import AllNews from "./AllNews.js";
 import Favourites from "./Favourites.js";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, HashRouter } from "react-router-dom";
 import Button from "@mui/material/Button";
 
 function App() {
   // console.log(window.location.pathname);
   return (
-    <BrowserRouter basename="ga-project4-news">
+    <HashRouter>
       <div id="global-content">
         <h1 id="main-title">World Wide News App</h1>
         {window.location.pathname === "/" ? null : (
@@ -16,7 +16,7 @@ function App() {
             Home
           </Button>
         )}
-        {window.location.pathname.includes("/favourites") ? null : (
+        {window.location.pathname.includes("favourites") ? null : (
           <Button component={Link} id="favourites-button" variant="contained" href="./favourites" to="./favourites">
             Favourites
           </Button>
@@ -28,7 +28,7 @@ function App() {
         <Route path="/allnews" element={<AllNews />} />
         <Route path="/favourites" element={<Favourites />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
     // <div className="App">
     //   <HomeNews />
     // </div>
