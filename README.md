@@ -91,7 +91,7 @@ Using this site you can filter news articles based on country or search for news
 
 <!-- * [![Next][Next.js]][Next-url] -->
 * [![React][React.js]][React-url]
-<!-- * [![Vue][Vue.js]][Vue-url] -->
+* [![JavaScript][JavaScript]][JavaScript-url]
 <!-- * [![Angular][Angular.io]][Angular-url] -->
 <!-- * [![Svelte][Svelte.dev]][Svelte-url] -->
 <!-- * [![Laravel][Laravel.com]][Laravel-url] -->
@@ -200,3 +200,5 @@ See the [open issues](https://github.com/Lyrefox/ga-project4-news/issues) for a 
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com
+[JavaScript]: https://img.shields.io/badge/Javascript-JS-green
+[JavaScript-url]: https://www.javascript.com/
