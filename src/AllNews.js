@@ -61,7 +61,6 @@ export default function AllNews() {
     console.log("This is a test click from prop button");
     // console.log(e.target.id);
     // setFavourites(searchResults[e.target.id]);
-
   };
 
   const scrollTop = () => {

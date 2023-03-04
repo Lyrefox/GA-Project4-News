@@ -7,6 +7,18 @@ const mockData = {
   url: "Mock Headline url",
 };
 
+test("Renders Fav Headline Title", () => {
+  render(<Favourites />);
+  const title = screen.getByTestId("fav-title-test");
+  expect(title).toBeInTheDocument();
+});
+
+test("Render's no favourites message", () => {
+  render(<Favourites />);
+  const noFav = screen.getByTestId("no-fav-test-id");
+  expect(noFav).toBeInTheDocument();
+});
+
 const setLocalStorage = (id, data) => {
   const localStorageMock = (function () {
     let store = {};
@@ -45,15 +57,3 @@ test("localStorage mock data", () => {
   setLocalStorage(mockId, mockJson);
   expect(localStorage.getItem(mockId)).toEqual(JSON.stringify(mockJson));
 });
-
-test("Renders Fav Headline Title", () => {
-  render(<Favourites />);
-  const title = screen.getByTestId("fav-title-test");
-  expect(title).toBeInTheDocument();
-});
-
-test("Render's no favourites message", () => {
-    render(<Favourites/>);
-    const noFav = screen.getByTestId("no-fav-test-id")
-    expect(noFav).toBeInTheDocument();
-})
