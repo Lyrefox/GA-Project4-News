@@ -43,7 +43,7 @@ export default function News() {
     // ))
       axios
       .get(
-        `http://newsapi.org/v2/top-headlines?country=${region}&apiKey=${NEWS_API_KEY}`
+        `https://newsapi.org/v2/top-headlines?country=${region}&apiKey=${NEWS_API_KEY}`
       )
       .then((response) => setTopArticles(response.data.articles));
   }, [region]);
