@@ -92,6 +92,7 @@ Using this site you can filter news articles based on country or search for news
 <!-- * [![Next][Next.js]][Next-url] -->
 * [![React][React.js]][React-url]
 * [![JavaScript][JavaScript]][JavaScript-url]
+* Materia UI
 <!-- * [![Angular][Angular.io]][Angular-url] -->
 <!-- * [![Svelte][Svelte.dev]][Svelte-url] -->
 <!-- * [![Laravel][Laravel.com]][Laravel-url] -->
