@@ -84,7 +84,7 @@ export default function News() {
 
       <div id="all-news-button">
         <Stack spacing={2} direction="row">
-          <Button id="all-news-button" variant="contained" href="/allnews">
+          <Button id="all-news-button" variant="contained" href="./allnews">
             Search News
           </Button>
         </Stack>

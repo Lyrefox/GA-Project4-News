@@ -8,16 +8,16 @@ import Button from "@mui/material/Button";
 function App() {
   // console.log(window.location.pathname);
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="ga-project4-news">
       <div id="global-content">
         <h1 id="main-title">World Wide News App</h1>
         {window.location.pathname === "/" ? null : (
-          <Button id="home-button" variant="contained" href="/">
+          <Button id="home-button" variant="contained" href=".">
             Home
           </Button>
         )}
-        {window.location.pathname === "/favourites" ? null : (
-          <Button id="favourites-button" variant="contained" href="/favourites">
+        {window.location.pathname.includes("/favourites") ? null : (
+          <Button id="favourites-button" variant="contained" href="./favourites">
             Favourites
           </Button>
         )}
