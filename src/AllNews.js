@@ -52,7 +52,7 @@ export default function AllNews() {
   //   console.log(searchResults);
   const loadNews = (page) => {
     return axios.get(
-      `https://newsapi.org/v2/everything?q=${searchAxios}&sortby=popularity&page=${page}&apiKey=${NEWS_API_KEY}`
+      `http://newsapi.org/v2/everything?q=${searchAxios}&sortby=popularity&page=${page}&apiKey=${NEWS_API_KEY}`
     );
     //   .then((response) => setSearchResults([...searchResults, ...response.data.articles]));
   };
