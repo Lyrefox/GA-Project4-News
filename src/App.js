@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 function App() {
   console.log(window.location.pathname);
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="ga-project4-news">
       <div id="global-content">
         <h1 id="main-title">World Wide News App</h1>
         {window.location.pathname === "/" ? null : (
