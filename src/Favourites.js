@@ -31,8 +31,10 @@ export default function Favourites() {
       // console.log(items.List.item)
       // items.List.item[0].map((test) => console.log(test))
     }
+    console.log(window.location.pathname)
     return (
       <div id="fav-content">
+        {console.log(window.location.pathname)}
         <div id="fav-title">
           <h2 data-testid="fav-title-test">Favourites</h2>
         </div>

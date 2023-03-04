@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import TopArticles from "./TopArticles";
 import axios from "axios";
-
+import { Link } from "react-router-dom"
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -84,7 +84,7 @@ export default function News() {
 
       <div id="all-news-button">
         <Stack spacing={2} direction="row">
-          <Button id="all-news-button" variant="contained" href="./allnews">
+          <Button component={Link} id="all-news-button" variant="contained" href="./allnews" to="./allnews">
             Search News
           </Button>
         </Stack>
